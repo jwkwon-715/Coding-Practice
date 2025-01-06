@@ -2,13 +2,13 @@ n, k = map(int, input().split())
 count = 0
 
 while True:
-    if n==1:
+    target = (n//k)*k
+    count += (n-target)
+    n = target
+    if n<k:
         break
-    if n%k == 0:
-        n=n/k
-        count += 1
-    else:
-        n -=1
-        count += 1
+    count += 1
+    n//=k
 
+count += (n-1)
 print(count)
